@@ -7,7 +7,7 @@ const questions = [
 let currentQ = 0;
 
 function loadQuestion() {
-    const quizDiv = document.getElementById('quiz-container');
+    const quizDiv = document.getElementById('quiz-box');
     const q = questions[currentQ];
     
     quizDiv.innerHTML = `
