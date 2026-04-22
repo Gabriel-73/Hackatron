@@ -75,10 +75,8 @@
   100% { transform: translateX(0); }
 }
 
-/* 2. Classe qui exécute l'animation */
 .apply-shake {
   animation: shake 0.3s ease-in-out;
-  /* On peut aussi ajouter une bordure rouge pour renforcer l'idée d'erreur */
   outline: 1px solid red;
   color: red !important;
 }
@@ -88,6 +86,7 @@
 .nav-card small { 
     color: #888;
     outline: none;
+    transition: 0.3s;
 }
 
 /* La ligne qui scanne l'écran (effet rétro) */
