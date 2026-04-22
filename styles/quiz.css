@@ -1,0 +1,16 @@
+.quiz-option {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: #111;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    cursor: pointer;
+    text-align: left;
+}
+
+.quiz-option:hover {
+    background: #00ff41;
+    color: #000;
+}

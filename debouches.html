@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Débouchés</title>
+    <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+    <div id="content" class="game-container">
+        </div>
+
+    <script src="script/main.js"></script>
+    <script>
+        window.onload = function() {
+            const score = parseInt(localStorage.getItem('user_ects') || 0);
+            const content = document.getElementById('content');
+            
+            if(score < 60) {
+                content.innerHTML = "<h1>ACCÈS REFUSÉ</h1><p>Reviens quand tu auras 60 ECTS.</p><a href='index.html'>Retour</a>";
+            } else {
+                content.innerHTML = "<h1>FÉLICITATIONS !</h1><p>Tu es diplômé. Débouchés : Master IA, Cyber, Dév Fullstack...</p><button onclick='localStorage.clear(); location.href=\"index.html\"'>Recommencer</button>";
+            }
+        }
+    </script>
+</body>
+</html>
