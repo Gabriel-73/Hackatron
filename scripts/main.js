@@ -125,7 +125,7 @@ function showMenu() {
         document.getElementById('display-name').innerText = name.toUpperCase();
         
         // Mise à jour du score
-        document.getElementById('ects-counter').innerText = score;
+        document.getElementById('ects-counter').innerText = `${score} / 60`;
 
         // Déblocage du diplôme
         if (score >= 60) {
@@ -143,13 +143,13 @@ function ajouterECTS(montant) {
     localStorage.setItem('user_ects', score + montant);
     // On met à jour l'affichage si on est sur l'index
     const counter = document.getElementById('ects-counter');
-    if(counter) counter.innerText = score + montant;
+    if(counter) counter.innerText = `${score + montant} / 60`;
 }
 
 // Deconnexion (efface les données et recharge la page)
 function deconnecter() {
     localStorage.clear();
-    location.reload();
+    open("index.html", "_self");
 }
 
 // Au chargement, on vérifie si l'utilisateur est déjà connecté
