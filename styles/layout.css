@@ -110,7 +110,7 @@ main {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: right;
     margin-top: 20px;
 }
 
