@@ -10,8 +10,9 @@ const state = {
 
 // Initialise le score au chargement
 function init() {
-    showMenu();
-    updateUI();
+    if (!localStorage.getItem('student_name')) {
+        showMenu();
+    }
 }
 
 function ajouterECTS(points) {
@@ -25,7 +26,7 @@ function updateUI() {
     const score = parseInt(localStorage.getItem('user_ects') || 0);
     
     if (display) {
-        display.innerText = `Crédits : ${score} / 60 ECTS`;
+        display.innerText = `${score} / 60`;
         
         // Effet visuel si score élevé
         if (score >= 60) {
@@ -60,7 +61,7 @@ function updateUI() {
     const display = document.getElementById('ects-counter');
     if (display) {
         const score = localStorage.getItem('user_ects') || 0;
-        display.innerText = `Crédits : ${score} / 60 ECTS`;
+        display.innerText = `${score} / 60`;
     }
 }
 
@@ -95,6 +96,8 @@ function showMenu() {
         // Switch d'affichage
         document.getElementById('setup-player').classList.add('hidden');
         document.getElementById('main-menu').classList.remove('hidden');
+        document.querySelector('button[onclick="deconnecter()"]').classList.remove('hidden');
+        document.querySelector('.ects-display').classList.remove('alone');
         document.getElementById('display-name').innerText = name.toUpperCase();
         
         // Mise à jour du score
@@ -107,6 +110,7 @@ function showMenu() {
             finalLink.querySelector('small').innerText = "PRÊT POUR LE MARCHÉ DU TRAVAIL";
         }
     }
+    updateUI();
 }
 
 // Fonction globale pour ajouter des points (utilisable depuis les autres pages)

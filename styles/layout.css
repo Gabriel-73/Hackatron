@@ -21,6 +21,25 @@ header {
     padding: 20px;
     border-bottom: 1px dashed var(--green);
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alone {
+    justify-content: center !important;
+}
+
+header .ects-display {
+    margin-left: 5rem;
+}
+
+header .alone {
+    margin: 0 auto !important;
+}
+
+header button {
+    margin-right: 5rem;
 }
 
 .stats-bar {
