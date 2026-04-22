@@ -149,7 +149,7 @@ function ajouterECTS(montant) {
 // Deconnexion (efface les données et recharge la page)
 function deconnecter() {
     localStorage.clear();
-    location.reload();
+    open("index.html", "_self");
 }
 
 // Au chargement, on vérifie si l'utilisateur est déjà connecté
