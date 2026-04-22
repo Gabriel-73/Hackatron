@@ -13,6 +13,7 @@ function init() {
     if (!localStorage.getItem('student_name')) {
         showMenu();
     }
+    updateUI();
 }
 
 function ajouterECTS(points) {
