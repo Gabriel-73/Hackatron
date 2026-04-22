@@ -15,12 +15,13 @@ function loadAmphi() {
 
 function randomizeOrder(res, arr, type) {
     const newArr = [];
+    tempArr = [...arr];
     if (type === "exam") {
-        arr.push(res);
-        while (arr.length > 0) {
-            const randomIndex = Math.floor(Math.random() * arr.length);
-            newArr.push(arr[randomIndex]);
-            arr.splice(randomIndex, 1);
+        tempArr.push(res);
+        while (tempArr.length > 0) {
+            const randomIndex = Math.floor(Math.random() * tempArr.length);
+            newArr.push(tempArr[randomIndex]);
+            tempArr.splice(randomIndex, 1);
         }
     } else {
         let randomIndex = Math.floor(Math.random() * arr.length+1);
