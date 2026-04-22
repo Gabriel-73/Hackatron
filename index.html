@@ -3,12 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackatron</title>
-    <link rel="stylesheet" href="./styles/index.css">
-    <script src="./scripts/index.js" defer></script>
+    <title>Bachelor Info - Le Jeu</title>
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <img src="./images/maxresdefault.jpg" alt="temp">
+
+    <div class="scanline"></div>
+
+    <header>
+        <div class="ects-display">
+            SÉQUENCE : <span id="ects-counter">0</span> ECTS
+        </div>
+    </header>
+
+    <main class="game-container">
+        <section id="setup-player">
+            <h1 class="glitch-text">INITIALISATION_SYS</h1>
+            <p>Identifiez-vous pour accéder au cursus :</p>
+            <input type="text" id="player-name" placeholder="LOGIN_ETUDIANT..." autocomplete="off">
+            <button onclick="startGame()" class="main-btn">ENTRER DANS LA FAC</button>
+        </section>
+
+        <section id="main-menu" class="hidden">
+            <h1>BIENVENUE, <span id="display-name"></span></h1>
+            <p class="status-msg">Statut : Étudiant en informatique | Semestre 1</p>
+            
+            <nav class="grid-nav">
+                <a href="cours.html" class="nav-card">
+                    <span class="icon">🏛️</span>
+                    <h3>AMPHI A</h3>
+                    <small>Cours & Exams</small>
+                </a>
+                <a href="projets.html" class="nav-card">
+                    <span class="icon">💻</span>
+                    <h3>SALLE TP</h3>
+                    <small>Projets Web/Java</small>
+                </a>
+                <a href="associations.html" class="nav-card">
+                    <span class="icon">☕</span>
+                    <h3>LE FOYER</h3>
+                    <small>Vie étudiante</small>
+                </a>
+                <a href="debouches.html" id="final-link" class="nav-card locked">
+                    <span class="icon">🎓</span>
+                    <h3>DIPLÔME</h3>
+                    <small>Accès restreint (60 ECTS)</small>
+                </a>
+            </nav>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

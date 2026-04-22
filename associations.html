@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackatron</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/game.css">
+    <script src="./scripts/index.js" defer></script>
+</head>
+<body>
+
+<div class="game-container">
+    <div class="nav-menu">
+    <a href="index.html" class="btn">⬅ Retour au menu</a>
+</div>
+    <h2>☕ Le Foyer Étudiant</h2>
+    <p>Découvre les assos pour gagner tes derniers ECTS !</p>
+    
+    <div class="asso-grid">
+        <div class="asso-card" onclick="decouvrirAsso(this, 'BDE', 5)">
+            <h3>BDE Info</h3>
+            <p class="desc">Soirées, LANs et parrainage.</p>
+        </div>
+        <div class="asso-card" onclick="decouvrirAsso(this, 'Club Cyber', 5)">
+            <h3>Cyber Security Club</h3>
+            <p class="desc">CTF et hacking éthique.</p>
+        </div>
+        <div class="asso-card" onclick="decouvrirAsso(this, 'Junior Entreprise', 5)">
+            <h3>Junior ETP</h3>
+            <p class="desc">Projets rémunérés pour entreprises.</p>
+        </div>
+    </div>
+
+    <div id="ects-counter">ECTS : 0 / 60</div>
+    <a href="index.html" class="nav-btn">Retour au Hall</a>
+</div>
+<script src="scripts/main.js"></script>
