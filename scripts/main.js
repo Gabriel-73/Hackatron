@@ -6,6 +6,7 @@ const state = {
         updateUI();
     }
 };
+
 // script/main.js
 
 // Initialise le score au chargement
@@ -59,11 +60,31 @@ function ajouterECTS(montant) {
 
 // Mise à jour de l'affichage sur toutes les pages
 function updateUI() {
+    // Gestion du compteur d'ECTS
     const display = document.getElementById('ects-counter');
     if (display) {
         const score = localStorage.getItem('user_ects') || 0;
         display.innerText = `${score} / 60`;
     }
+    // Gestion du diplôme sur la page d'accueil
+    const target = document.getElementById('final-link');
+    target.addEventListener('click', function(e) {
+        // Si le lien n'est pas verrouillé, on redirige normalement
+        if (target && !target.classList.contains('locked')) {
+            window.location.href = "debouches.html";
+        } else {
+            // Récupère le petit texte
+            const small = document.querySelector('.nav-card.locked small');
+            // Ajoute la classe d'animation
+            target.classList.add('apply-shake');
+            small.classList.add('apply-shake');
+            // On retire la classe après l'animation (300ms) pour pouvoir la rejouer au prochain clic
+            setTimeout(() => {
+                target.classList.remove('apply-shake');
+                small.classList.remove('apply-shake');
+            }, 300);
+        }
+    });
 }
 
 // Spécifique à la page Associations pour éviter le double-clic
@@ -75,8 +96,7 @@ function decouvrirAsso(element, nom, points) {
     }
 }
 
-// script/main.js
-
+// Démarrage du jeu
 function startGame() {
     const input = document.getElementById('player-name');
     const name = input.value.trim();
@@ -123,6 +143,7 @@ function ajouterECTS(montant) {
     if(counter) counter.innerText = score + montant;
 }
 
+// Deconnexion (efface les données et recharge la page)
 function deconnecter() {
     localStorage.clear();
     location.reload();
@@ -133,8 +154,3 @@ window.onload = showMenu;
 
 // Au chargement de chaque page
 document.addEventListener('DOMContentLoaded', updateUI);
-
-
-// Initialisation au chargement
-document.addEventListener('DOMContentLoaded', updateUI);
-window.onload = updateUI();

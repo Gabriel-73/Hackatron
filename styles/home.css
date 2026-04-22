@@ -47,21 +47,48 @@
     text-align: center;
 }
 
-.nav-card:hover {
+.nav-card:not(.locked):hover {
     background: rgba(0, 255, 65, 0.2);
     box-shadow: 0 0 15px #00ff41;
     transform: scale(1.02);
 }
 
 .nav-card.locked {
-    border-color: #444;
-    color: #444;
+    border-color: #900;
+    color: #900;
     cursor: not-allowed;
     filter: grayscale(1);
 }
 
+.nav-card.locked:hover {
+    background: rgba(255, 0, 65, 0.2);
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* 2. Classe qui exécute l'animation */
+.apply-shake {
+  animation: shake 0.3s ease-in-out;
+  /* On peut aussi ajouter une bordure rouge pour renforcer l'idée d'erreur */
+  outline: 1px solid red;
+  color: red !important;
+}
+
 .nav-card h3 { margin: 10px 0 5px 0; font-size: 1.1rem; }
-.nav-card small { color: #888; }
+
+.nav-card small { 
+    color: #888;
+    outline: none;
+}
 
 /* La ligne qui scanne l'écran (effet rétro) */
 .scanline {
