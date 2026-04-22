@@ -42,6 +42,51 @@ header button {
     margin-right: 5rem;
 }
 
+main {
+    margin-top: 7%;
+}
+
+#top-bar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: var(--green); 
+    color: var(--dark);
+    margin: -20px -20px 20px -20px; 
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--green);
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-controls i {
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid var(--dark);
+    background-color: var(--green);
+    transition: all 0.2s ease-in-out;
+}
+.window-controls i:hover {
+    background-color: var(--dark);
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.window-controls i:last-child:hover {
+    background-color: #ff0041;
+    color: var(--dark);
+    border: 1px solid #ff0041;
+}
+
 .stats-bar {
     background: var(--gray);
     padding: 10px 20px;
