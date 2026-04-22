@@ -10,6 +10,7 @@ const state = {
 
 // Initialise le score au chargement
 function init() {
+    showMenu();
     updateUI();
 }
 
@@ -133,6 +134,11 @@ function ajouterECTS(montant) {
     // On met à jour l'affichage si on est sur l'index
     const counter = document.getElementById('ects-counter');
     if(counter) counter.innerText = score + montant;
+}
+
+function deconnecter() {
+    localStorage.clear();
+    location.reload();
 }
 
 // Au chargement, on vérifie si l'utilisateur est déjà connecté
