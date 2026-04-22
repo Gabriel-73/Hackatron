@@ -137,4 +137,4 @@ document.addEventListener('DOMContentLoaded', updateUI);
 
 // Initialisation au chargement
 document.addEventListener('DOMContentLoaded', updateUI);
-window.onload = majAffichage;
+window.onload = updateUI();
