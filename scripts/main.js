@@ -47,24 +47,6 @@ function updateUI() {
 
 document.addEventListener('DOMContentLoaded', init);
 
-
-// Fonction pour ajouter des ECTS
-function ajouterECTS(montant) {
-    let scoreActuel = parseInt(localStorage.getItem('ects') || 0);
-    scoreActuel += montant;
-    localStorage.setItem('ects', scoreActuel);
-    majAffichage();
-}
-
-// Mise à jour de la barre de progression sur chaque page
-function majAffichage() {
-    const barre = document.getElementById('progression-ects');
-    if(barre) {
-        let score = localStorage.getItem('ects') || 0;
-        barre.textContent = `ECTS : ${score} / 60`;
-    }
-}
-
 // Fonction pour ajouter des ECTS de manière sécurisée
 function ajouterECTS(montant) {
     let score = parseInt(localStorage.getItem('user_ects') || 0);
