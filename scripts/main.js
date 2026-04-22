@@ -68,23 +68,26 @@ function updateUI() {
     }
     // Gestion du diplôme sur la page d'accueil
     const target = document.getElementById('final-link');
-    target.addEventListener('click', function(e) {
-        // Si le lien n'est pas verrouillé, on redirige normalement
-        if (target && !target.classList.contains('locked')) {
-            window.location.href = "debouches.html";
-        } else {
-            // Récupère le petit texte
-            const small = document.querySelector('.nav-card.locked small');
-            // Ajoute la classe d'animation
-            target.classList.add('apply-shake');
-            small.classList.add('apply-shake');
-            // On retire la classe après l'animation (300ms) pour pouvoir la rejouer au prochain clic
-            setTimeout(() => {
-                target.classList.remove('apply-shake');
-                small.classList.remove('apply-shake');
-            }, 300);
-        }
-    });
+    if (target) {
+        target.addEventListener('click', function(e) {
+            // Si le lien n'est pas verrouillé, on redirige normalement
+            if (!target.classList.contains('locked')) {
+                window.location.href = "debouches.html";
+            } else {
+                // Récupère le petit texte
+                const small = document.querySelector('.nav-card.locked small');
+                // Ajoute la classe d'animation
+                target.classList.add('apply-shake');
+                small.classList.add('apply-shake');
+                // On retire la classe après l'animation (300ms) pour pouvoir la rejouer au prochain clic
+                setTimeout(() => {
+                    target.classList.remove('apply-shake');
+                    small.classList.remove('apply-shake');
+                }, 300);
+            }
+        
+        });
+    }
 }
 
 // Spécifique à la page Associations pour éviter le double-clic
