@@ -12,31 +12,39 @@
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
-
-<div class="game-container"> 
-    <section id="top-bar">
-        <div class="window-controls">
-            <i>_</i>
-            <i>□</i>
-            <i>X</i>
+    <header>
+        <div class="ects-display">
+            SÉQUENCE : <span id="ects-counter">5 / 60</span> ECTS
         </div>
-    </section>
-    
-    <div class="nav-menu">
-    <a href="index.html" class="btn">⬅ Retour au menu</a>
-</div>
-    <h2>> Terminal_TP_Salle_302</h2>
-    <div id="terminal-output">    
-        <p>Tapez 'help' pour voir les commandes ou cliquez sur les boutons.</p>
+        <button onclick="deconnecter()" class="main-btn">DÉCONNECTER</button>
+    </header>
+    <div class="game-container"> 
+        <section id="top-bar">
+            <div class="window-controls">
+                <i>_</i>
+                <i>□</i>
+                <i>X</i>
+            </div>
+        </section>
+
+        <div class="nav-menu">
+        <a href="index.html" class="btn">⬅ Retour au menu</a>
     </div>
-    <div class="terminal-input-area">
-        <span>$</span>
-        <input type="text" id="terminal-input" autofocus>
+        <h2>> Terminal_TP_Salle_302</h2>
+        <div id="terminal-output">    
+            <p>Tapez 'help' pour voir les commandes ou cliquez sur les boutons.</p>
+        </div>
+        <div class="terminal-input-area">
+            <span>$</span>
+            <input type="text" id="terminal-input" autofocus>
+        </div>
+        <div class="quick-btns">
+            <button onclick="executeCommand('ls')">ls (Lister projets)</button>
+            <button onclick="executeCommand('clear')">Effacer</button> 
+        </div>
     </div>
-    <div class="quick-btns">
-        <button onclick="executeCommand('ls')">ls (Lister projets)</button>
-        <button onclick="executeCommand('clear')">Effacer</button> 
-    </div>
-</div>
 <script src="scripts/main.js"></script>
 <script src="scripts/terminal.js"></script> 
+
+</body>
+</html>

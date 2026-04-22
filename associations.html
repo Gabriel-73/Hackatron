@@ -11,37 +11,45 @@
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
+    <header>
+        <div class="ects-display">
+            SÉQUENCE : <span id="ects-counter">5 / 60</span> ECTS
+        </div>
+        <button onclick="deconnecter()" class="main-btn">DÉCONNECTER</button>
+    </header>
 
-<div class="game-container">
-    <section id="top-bar">
-        <div class="window-controls">
-            <i>_</i>
-            <i>□</i>
-            <i>X</i>
-        </div>
-</section>
-    <div class="nav-menu">
-    <a href="index.html" class="btn">⬅ Retour au menu</a>
-</div>
-    <h2>☕ Le Foyer Étudiant</h2>
-    <p>Découvre les assos pour gagner tes derniers ECTS !</p>
-    
-    <div class="asso-grid">
-        <div class="asso-card" onclick="decouvrirAsso(this, 'BDE', 5)">
-            <h3>BDE Info</h3>
-            <p class="desc">Soirées, LANs et parrainage.</p>
-        </div>
-        <div class="asso-card" onclick="decouvrirAsso(this, 'Club Cyber', 5)">
-            <h3>Cyber Security Club</h3>
-            <p class="desc">CTF et hacking éthique.</p>
-        </div>
-        <div class="asso-card" onclick="decouvrirAsso(this, 'Junior Entreprise', 5)">
-            <h3>Junior ETP</h3>
-            <p class="desc">Projets rémunérés pour entreprises.</p>
-        </div>
+    <div class="game-container">
+        <section id="top-bar">
+            <div class="window-controls">
+                <i>_</i>
+                <i>□</i>
+                <i>X</i>
+            </div>
+    </section>
+        <div class="nav-menu">
+        <a href="index.html" class="btn">⬅ Retour au menu</a>
     </div>
+        <h2>☕ Le Foyer Étudiant</h2>
+        <p>Découvre les assos pour gagner tes derniers ECTS !</p>
 
-    <div id="ects-counter">ECTS : 0 / 60</div>
-    <a href="index.html" class="nav-btn">Retour au Hall</a>
-</div>
+        <div class="asso-grid">
+            <div class="asso-card" onclick="decouvrirAsso(this, 'BDE', 5)">
+                <h3>BDE Info</h3>
+                <p class="desc">Soirées, LANs et parrainage.</p>
+            </div>
+            <div class="asso-card" onclick="decouvrirAsso(this, 'Club Cyber', 5)">
+                <h3>Cyber Security Club</h3>
+                <p class="desc">CTF et hacking éthique.</p>
+            </div>
+            <div class="asso-card" onclick="decouvrirAsso(this, 'Junior Entreprise', 5)">
+                <h3>Junior ETP</h3>
+                <p class="desc">Projets rémunérés pour entreprises.</p>
+            </div>
+        </div>
+
+        <div id="ects-counter">ECTS : 0 / 60</div>
+        <a href="index.html" class="nav-btn">Retour au Hall</a>
+    </div>
 <script src="scripts/main.js"></script>
+
+</body>
