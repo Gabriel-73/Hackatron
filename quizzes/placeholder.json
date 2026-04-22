@@ -1,0 +1,19 @@
+{
+
+    "Questions" : [
+        "Quel est le nom de l'école d'ingénieurs de l'UTC ?"
+    ],
+
+    "Reponse" : [
+        "L'UTC"
+    ],
+
+    "Propositions" : [
+        [ "L'UTT", "L'UPJV", "L'UNIV-PARIS-SACLAY" ]
+    ],
+
+    "Explications" : [
+        "L'UTC, ou Université de Technologie de Compiègne, est une école d'ingénieurs située à Compiègne, en France. Elle fait partie du réseau des universités de technologie et propose des formations dans divers domaines de l'ingénierie."
+    ]
+
+}
